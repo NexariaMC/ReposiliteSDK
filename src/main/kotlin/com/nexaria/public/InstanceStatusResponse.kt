@@ -1,0 +1,15 @@
+package com.nexaria.public
+
+import kotlinx.serialization.Serializable
+
+@Serializable
+data class InstanceStatusResponse(
+    val version: String,
+    val latestVersion: String,
+    val uptime: Long,
+    val usedMemory: Double,
+    val maxMemory: Int,
+    val usedThreads: Int,
+    val maxThreads: Int,
+    val failuresCount: Int
+)
