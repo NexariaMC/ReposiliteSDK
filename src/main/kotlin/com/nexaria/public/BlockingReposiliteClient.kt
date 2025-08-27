@@ -6,6 +6,11 @@ import kotlinx.coroutines.runBlocking
 class BlockingReposiliteClient(
     private val client: ReposiliteClient
 ) {
+
+
+    val wroteCredentials: Boolean get() = client.wroteCredentials
+    val credentials: String? get() = client.credentials
+
     fun getTokenDetails(): SessionDetails = runBlocking { client.getTokenDetails() }
     fun getInstanceStatus(): InstanceStatusResponse = runBlocking { client.getInstanceStatus() }
     fun getSettingsDomains(): List<String> = runBlocking { client.getSettingsDomains() }
